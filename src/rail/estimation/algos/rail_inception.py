@@ -145,7 +145,7 @@ class Inception(CatEstimator):
         
         self.nnmodel = None
         self.scale = None
-        super().__init__(self, args, **kwargs)
+        super().__init__(args, **kwargs)
         
     
     def open_model(self, **kwargs):
