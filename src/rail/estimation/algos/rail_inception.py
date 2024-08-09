@@ -102,9 +102,6 @@ class Inform_Inception(CatInformer):
                           epoch=Param(int, 5),
                           hdf5_groupname=SHARED_PARAMS)
              
-                
-    def __init__(self, args, comm=None):
-        CatInformer.__init__(self, args, comm=comm)
         
     def run(self):
         """
@@ -142,13 +139,13 @@ class Inception(CatEstimator):
     config_options = CatEstimator.config_options.copy()
     config_options.update()
     
-    def __init__(self, args, comm=None):
+    def __init__(self, args, **kwargs):
         """ Constructor:
         Do Estimator specific initialization """
         
         self.nnmodel = None
         self.scale = None
-        CatEstimator.__init__(self, args, comm=comm)
+        super().__init__(args, **kwargs)
         
     
     def open_model(self, **kwargs):
